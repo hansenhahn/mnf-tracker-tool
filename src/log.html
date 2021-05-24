@@ -1,0 +1,72 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<title>IMS - Registro dos equipamentos</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="js/script.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			pageSetCallbackFunc(PAGE_RENDERMODE_LOG_TABLE); 
+			timerUpdateLoop();
+			});
+		</script>	
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="https://www.ims.ind.br">IMS Power Quality</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="panel.html">ordens</a></li>
+					<li class="active"><a href="log.html">registros</a></li>
+					<li><a href="about.html">sobre</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><p class="navbar-text small" id="update-timer" onclick="pageRefreshNow()"></p></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid " style="margin-top:40px">
+			<div class="well well-lg shadow-sm" style="margin-top:5px">
+				<div style="padding:10px">
+					<span class="h3">Registro dos equipamentos</span>
+				</div>
+				<div class="content">
+					<div class="input-group col-xs-3 pull-right" style="margin:10px 0px">
+						<input type="text" class="form-control" id="input-filter" placeholder="Filtrar"/>
+						<div class="input-group-btn">
+							<button class="btn btn-default" style="padding:9px 20px" onclick="pageRefreshNow()">
+								<i class="glyphicon glyphicon-search large"></i>
+							</button>
+						</div>
+					</div>
+					
+					<table class="table table-hover">
+						<thead class="bg-dark">
+							<tr>
+								<th scope="col" width="15%">Atualização</th>
+								<th scope="col" width="15%">Ordem de Produção</th>
+								<th scope="col" width="15%">Número de Série</th>
+								<th scope="col" width="15%">Equipamento</th>
+								<th scope="col" width="15%">Etapa</th>
+								<th scope="col">Cliente</th>
+							</tr>
+						</thead>
+						<tbody class="bg-light"></tbody>
+					</table>
+				</div>
+				<div style="padding:10px">
+					<div class="btn-page-indexes-group">
+					</div>
+				</div>
+				<div class="modal" id="update-modal">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

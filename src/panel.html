@@ -1,0 +1,60 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<title>IMS - Painel de indicadores</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="js/script.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			pageSetCallbackFunc(PAGE_RENDERMODE_GROUP_TABLE); 
+			timerUpdateLoop();
+			});
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="https://www.ims.ind.br">IMS Power Quality</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="panel.html">ordens</a></li>
+					<li><a href="log.html">registros</a></li>
+					<li><a href="about.html">sobre</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><p class="navbar-text small" id="update-timer" onclick="pageRefreshNow()"></p></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid " style="margin-top:40px">
+			<div class="well well-lg shadow-sm" style="margin-top:5px">
+				<div style="padding:10px">
+					<span class="h3">Painel de indicadores</span>
+				</div>
+				<div class="content">
+					<div class="row">				
+						<div class="input-group col-xs-3 pull-right" style="margin:10px 0px">
+						<input type="text" class="form-control" id="input-filter" placeholder="Filtrar"/>
+						<div class="input-group-btn">
+							<button class="btn btn-default" style="padding:9px 20px" onclick="pageRefreshNow()">
+								<i class="glyphicon glyphicon-search large"></i>
+							</button>
+						</div>
+					</div>
+					</div>
+					<div class="row">
+						<div id="update-pi">
+						</div>
+					</div>
+				</div>
+				<div class="modal" id="update-modal">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
