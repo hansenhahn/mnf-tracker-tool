@@ -1,5 +1,5 @@
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "http://ims1436:5000";
 
 let apiFunc = "";
 let jsonData = [];
@@ -229,4 +229,20 @@ function pageIndexesStepBackward()
 	pageIndexRoot -= PAGE_FOOTER_STEP;
 	pageSelected = pageIndexRoot;
 	pageCallback(jsonDataFiltered);
+}
+
+function generateQrCode()
+{
+	var payload = {}
+	
+	$('#qrcodeCanvas').html("")
+	
+	payload["iop"] = $("#input-filter1").val()
+	payload["client"] = $("#input-filter2").val()
+	payload["equipment"] = $("#input-filter3").val()
+	payload["serialNumber"] = parseInt($("#input-filter4").val())
+	payload["exec"] = parseInt($("#input-filter5").val())
+	payload["configurator"] = $("#input-filter6").val()
+	
+	$('#qrcodeCanvas').qrcode({text: JSON.stringify(payload)})
 }

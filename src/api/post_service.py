@@ -19,7 +19,7 @@ import os
 import json
 import glob
 
-DB_API = 'http://127.0.0.1:5000/api/v1/track'
+DB_API = 'http://ims1436:5000/api/v1/track'
 DB_PATH = "C:/mnf-data"
 
 def scandirs(path):
@@ -75,6 +75,5 @@ class DBPostService(win32serviceutil.ServiceFramework):
             time.sleep(10.0)
 
 
-if __name__ == "__main__":
-    #DBPostService().Main()    
+if __name__ == "__main__": 
     win32serviceutil.HandleCommandLine(DBPostService)

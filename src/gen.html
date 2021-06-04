@@ -1,0 +1,102 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<title>IMS - QRCode da Ordem de Produção</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>		
+		<script type="text/javascript" src="js/jquery.qrcode.js"></script>
+		<script type="text/javascript" src="js/qrcode.js"></script>		
+		<script type="text/javascript" src="js/script.js"></script>		
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="https://www.ims.ind.br">IMS Power Quality</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="panel.html">ordens</a></li>
+					<li><a href="log.html">registros</a></li>
+					<li class="active"><a href="gen.html">gerador</a></li>
+					<li><a href="about.html">sobre</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid " style="margin-top:40px">
+			<div class="well well-lg shadow-sm" style="margin-top:5px">
+				<div style="padding:10px">
+					<span class="h3">QRCode da Ordem de Produção</span>
+				</div>
+				<div class="content">			
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="row" style="margin:10px 30px">
+								<div class="col-sm-3" style="margin-top:7px;margin-bottom:7px">
+									<span>IOP:</span>
+								</div>														
+								<div class="input-group col-sm-9">
+									<input type="text" class="form-control" id="input-filter1" placeholder="IOP"/>
+								</div>
+							</div>	
+							<div class="row" style="margin:10px 30px">
+								<div class="col-sm-3" style="margin-top:7px;margin-bottom:7px">
+									<span>Cliente:</span>
+								</div>														
+								<div class="input-group col-sm-9">
+									<input type="text" class="form-control" id="input-filter2" placeholder="Cliente"/>
+								</div>
+							</div>		
+							<div class="row" style="margin:10px 30px">
+								<div class="col-sm-3" style="margin-top:7px;margin-bottom:7px">
+									<span>Equipamento:</span>									
+								</div>														
+								<div class="input-group col-sm-9">
+									<input type="text" class="form-control" id="input-filter3" placeholder="Equipamento"/>
+								</div>
+							</div>	
+							<div class="row" style="margin:10px 30px">
+								<div class="col-sm-3" style="margin-top:7px;margin-bottom:7px">
+									<span>Configurador:</span>									
+								</div>														
+								<div class="input-group col-sm-9">
+									<input type="text" class="form-control" id="input-filter6" placeholder="Configurador"/>
+								</div>
+							</div>								
+							<div class="row"style="margin:10px 30px">
+								<div class="col-sm-3" style="margin-top:7px;margin-bottom:7px">
+									<span >Núm. de Série:</span>
+								</div>														
+								<div class="input-group col-sm-9">
+									<input type="text" class="form-control" id="input-filter4" placeholder="Número de Série"/>
+								</div>
+							</div>							
+							<div class="row" style="margin:10px 30px">
+								<div class="col-sm-3" style="margin-top:7px;margin-bottom:7px">
+									<span>Quantidade:</span>
+								</div>							
+								<div class="input-group col-sm-9">
+									<input type="text" class="form-control" id="input-filter5" placeholder="Quantidade"/>
+								</div>
+							</div>	
+							<div class="row" style="margin:10px 30px">
+								<div class="col-sm-12">
+									<div class="input-group-btn">
+										<button class="btn btn-default" style="padding:9px 20px" onclick="generateQrCode()">
+											<i class="glyphicon glyphicon-qrcode large"></i>
+										</button>
+									</div>
+								</div>							
+							</div>							
+						</div>
+						<div class="col-xs-6">
+							<div id="qrcodeCanvas" style="margin:10px 0px"></div>
+						</div>					
+					</div>
+				</div>							
+			</div>
+		</div>
+	</body>
+</html>
